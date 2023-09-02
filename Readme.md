@@ -56,7 +56,8 @@ I value your feedback and suggestions. If you have any ideas for improving this 
 This project is licensed under the [MIT License](LICENSE).
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
+![Bash](https://img.shields.io/badge/language-Bash-4EAA25.svg)
+![Tmux](https://img.shields.io/badge/Tmux-3BBECC.svg)
 ---
 
 Thank you for considering the **Tmux Status Theme** for your Tmux setup. I hope it enhances your Tmux experience with its minimalist design and efficient use of screen real estate. Happy coding! 😊👍
