@@ -23,7 +23,6 @@ Welcome to the **Tmux Status Theme** project! This theme was created with a focu
 
 ## Usage
 
-```markdown
 ## Installation via Tmux Plugin Manager (TPM)
 
 I recommend using [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tpm) for easy installation:
@@ -43,7 +42,6 @@ I recommend using [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tp
    ```
 
 That's it! Your Tmux Status Theme is now installed and ready to use.
-```
 
 ## Contributing
 
