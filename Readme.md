@@ -21,6 +21,10 @@ Welcome to the **Tmux Status Theme** project! This theme was created with a focu
 
 ![Status with Prefix](./assets/prefix-preview.png)
 
+### GIF
+
+![Status](./assets/preview.gif)
+
 ## Usage
 
 ## Installation via Tmux Plugin Manager (TPM)
