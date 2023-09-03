@@ -47,6 +47,14 @@ I recommend using [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tp
 
 That's it! Your Tmux Status Theme is now installed and ready to use.
 
+## Tip
+
+Add this line in your tmux config so that you can easily toggle tmux status bar with one keymap.
+```
+bind-key b set -g status
+```
+Now pressing `prefix+b` will toggle status bar
+
 ## Contributing
 
 If you believe this theme can benefit from additional features or improvements without compromising its minimalism, I welcome your contributions. Please create a pull request with your changes, and we'll be happy to review and merge if they align with the project's goals.
