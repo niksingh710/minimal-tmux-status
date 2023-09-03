@@ -51,7 +51,7 @@ That's it! Your Tmux Status Theme is now installed and ready to use.
 
 Add this line in your tmux config so that you can easily toggle tmux status bar with one keymap.
 ```
-bind-key b set -g status
+bind-key b set-option status
 ```
 Now pressing `prefix+b` will toggle status bar
 
