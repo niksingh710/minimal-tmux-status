@@ -47,6 +47,12 @@ I recommend using [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tp
 
 That's it! Your Tmux Status Theme is now installed and ready to use.
 
+## Change Color of the BG
+
+```
+set -g @minimal-tmux-bg "#ffff00"
+```
+
 ## Tip
 
 Add this line in your tmux config so that you can easily toggle tmux status bar with one keymap.
