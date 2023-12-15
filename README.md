@@ -10,6 +10,7 @@ Welcome to the **Tmux Status Theme** project! This theme was created with a focu
 
 - **Minimalistic Design:** Enjoy a clutter-free Tmux status bar that only displays relevant information.
 - **Prefix Key Support:** Easily distinguish between Tmux's standard and prefix modes.
+- **Color of Indicator** Change the color of the indicator.
 
 ## Previews
 
@@ -52,6 +53,7 @@ That's it! Your Tmux Status Theme is now installed and ready to use.
 ```
 set -g @minimal-tmux-bg "#ffff00"
 ```
+hex code used in preview `#698DDA`
 
 ## Tip
 
