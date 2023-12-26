@@ -33,6 +33,7 @@ Welcome to the **Tmux Status Theme** project! This theme was created with a focu
 set -g @minimal-tmux-bg "#698DDA"
 set -g @minimal-tmux-justify "centre"
 set -g @minimal-tmux-indicator-str "  tmux  "
+set -g @minimal-tmux-indicator true
 set -g @minimal-tmux-status "bottom"
 
 ```
