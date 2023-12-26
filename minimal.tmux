@@ -2,13 +2,13 @@
 
 get_tmux_option() {
 	local option=$1
-	local default_value=$2
-	local option_value=$(tmux show-option -gqv "$option")
-	if [ -z "$option_value" ]; then
-		echo $default_value
-	else
-		echo $option_value
+	local default_value="$2"
+	local option_value=$(tmux show-options -gqv "$option")
+	if [ -n "$option_value" ] || [[ "$option_value" == "" && "$option" == "@minimal-tmux-indicator-str" ]]; then
+		echo "$option_value"
+    return
 	fi
+  echo "$default_value"
 }
 
 bg=$(get_tmux_option "@minimal-tmux-bg" '#698DDA')
