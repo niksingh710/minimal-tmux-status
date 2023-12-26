@@ -1,5 +1,26 @@
 #!/usr/bin/env bash
 
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+get_tmux_option() {
+	local option=$1
+	local default_value=$2
+	local option_value=$(tmux show-option -gqv "$option")
+	if [ -z "$option_value" ]; then
+		echo $default_value
+	else
+		echo $option_value
+	fi
+}
 
-tmux source-file "$CURRENT_DIR/theme/minimal-status.tmux"
+bg=$(get_tmux_option "@minimal-tmux-bg" '#698DDA')
+status=$(get_tmux_option "@minimal-tmux-status" "top")
+justify=$(get_tmux_option "@minimal-tmux-justify" "left")
+indicator=$(get_tmux_option "@minimal-tmux-indicator-str" "")
+
+tmux set-option -g status-position "${status}"
+tmux set-option -g status-style bg=default,fg=default
+tmux set-option -g status-justify "${justify}"
+tmux set-option -g status-left "#[bg=default,fg=default,bold]#{?client_prefix,,${indicator}}#[bg=${bg},fg=black,bold]#{?client_prefix,${indicator},}"
+tmux set-option -g status-right "#S"
+tmux set-option -g window-status-format " #I:#W "
+tmux set-option -g window-status-current-format "#[bg=${bg},fg=#000000] #I:#W#{?window_zoomed_flag, 󰊓 , }"
+
