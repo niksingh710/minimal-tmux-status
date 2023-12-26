@@ -12,9 +12,9 @@ get_tmux_option() {
 }
 
 bg=$(get_tmux_option "@minimal-tmux-bg" '#698DDA')
-status=$(get_tmux_option "@minimal-tmux-status" "top")
-justify=$(get_tmux_option "@minimal-tmux-justify" "left")
-indicator=$(get_tmux_option "@minimal-tmux-indicator-str" "")
+status=$(get_tmux_option "@minimal-tmux-status" "bottom")
+justify=$(get_tmux_option "@minimal-tmux-justify" "centre")
+indicator=$(get_tmux_option "@minimal-tmux-indicator-str" "  tmux  ")
 
 tmux set-option -g status-position "${status}"
 tmux set-option -g status-style bg=default,fg=default
