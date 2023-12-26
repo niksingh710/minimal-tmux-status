@@ -48,10 +48,13 @@ I recommend using [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tp
 
 That's it! Your Tmux Status Theme is now installed and ready to use.
 
-## Change Color of the BG
+## Variables to USE
 
 ```
-set -g @minimal-tmux-bg "#ffff00"
+set -g @minimal-tmux-bg "#698DDA"
+set -g @minimal-tmux-justify "center"
+set -g @minimal-tmux-indicator-str " tmux "
+
 ```
 hex code used in preview `#698DDA`
 
