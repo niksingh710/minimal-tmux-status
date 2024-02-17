@@ -53,6 +53,13 @@ set -g @minimal-tmux-status "bottom"
 set -g @minimal-tmux-right true
 set -g @minimal-tmux-left true
 
+# expanded icon (fullscreen icon) 
+set -g @minimal-tmux-expanded-icon " 󰊓 "
+
+#on all tabs (default is false)
+# false will make it visible for the current tab only
+set -g @minimal-tmux-show-expanded-icons-for-all-tabs true
+
 # To add or remove extra text in status bar
 set -g @minimal-tmux-status-right-extra ""
 set -g @minimal-tmux-status-left-extra ""
