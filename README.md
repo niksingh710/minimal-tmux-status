@@ -1,5 +1,18 @@
+<p align="center" style="color:grey">
 
-<center>
+
+
+![image](https://github.com/niksingh710/minimal-tmux-status/assets/60490474/f689e7c8-f081-421e-a7f4-3108f9a870eb)
+
+<div align="center">
+
+<table>
+<tbody>
+<td align="center">
+<img width="2000" height="0"><br>
+
+This is a theme/plugin for my Tmux Status bar.<br>
+This is inspired from the zellij prefix indicator, that shows when the prefix key is pressed.<br>
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Bash](https://img.shields.io/badge/language-Bash-4EAA25.svg)
@@ -7,38 +20,34 @@
 ![Stars](https://img.shields.io/github/stars/niksingh710/minimal-tmux-status.svg)
 ![Contributors](https://img.shields.io/github/contributors/niksingh710/minimal-tmux-status.svg)
 
-</center>
+<img width="2000" height="0">
+</td>
+</tbody>
+</table>
 
-# Tmux Status Theme
+> This theme was created with a focus on minimalism and essential elements, ensuring a clean and distraction-free Tmux status bar. Whether you're an experienced Tmux user or just getting started, this theme offers a seamless experience with support for the `prefix key press`.
 
-![Minimalistic Tmux Status Theme](./assets/preview.png)
+</div>
+</p>
 
-## Introduction
+### Preview
 
-Welcome to the **Tmux Status Theme** project! This theme was created with a focus on minimalism and essential elements, ensuring a clean and distraction-free Tmux status bar. Whether you're an experienced Tmux user or just getting started, this theme offers a seamless experience with support for the `prefix key press`.
+<p align="center" style="color:grey">
+<div align="center">
 
-## Features
+<video width="800" autoplay loop src="https://github.com/niksingh710/minimal-tmux-status/assets/60490474/5d5cece0-5edf-4035-bb2d-c46868c357d1"></video>
 
-- **Minimalistic Design:** Enjoy a clutter-free Tmux status bar that only displays relevant information.
-- **Prefix Key Support:** Easily distinguish between Tmux's standard and prefix modes.
-- **Color of Indicator** Change the color of the indicator.
+</div>
+</p>
 
-## Previews
+  <details>
+    <summary>More</summary>
 
-### Without Prefix
+![output](https://github.com/niksingh710/minimal-tmux-status/assets/60490474/d12e544b-3d4a-43a4-93fc-cf767201b761)
 
-![Status without Prefix](./assets/preview.png)
+  </details>
 
-### With Prefix
-
-![Status with Prefix](./assets/prefix-preview.png)
-
-### GIF
-
-![Status](./assets/preview.gif)
-
-
-## Variables to Configure
+### Variables to Configure
 
 ```
 # These are the default values used inside the plugin to acheive the preview shown above.
@@ -53,10 +62,10 @@ set -g @minimal-tmux-status "bottom"
 set -g @minimal-tmux-right true
 set -g @minimal-tmux-left true
 
-# expanded icon (fullscreen icon) 
+# expanded icon (fullscreen icon)
 set -g @minimal-tmux-expanded-icon " 󰊓 "
 
-#on all tabs (default is false)
+# on all tabs (default is false)
 # false will make it visible for the current tab only
 set -g @minimal-tmux-show-expanded-icons-for-all-tabs true
 
@@ -68,14 +77,13 @@ set -g @minimal-tmux-status-left-extra ""
 set -g @minimal-tmux-status-right "#S"
 set -g @minimal-tmux-status-left "refer to code"
 
-# If getting strings cut in left status or right 
+# If getting strings cut in left status or right
 # Here 20 is the length of the characters in the string
 set -g status-left-right 20
 set -g status-left-length 20
-
 ```
 
-## Installation via Tmux Plugin Manager (TPM)
+### Installation via Tmux Plugin Manager (TPM)
 
 I recommend using [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tpm) for easy installation:
 
@@ -97,21 +105,27 @@ That's it! Your Tmux Status Theme is now installed and ready to use.
 
 ### Tip
 
+#### Toggle Status Bar
+
 Add this line in your tmux config so that you can easily toggle tmux status bar with one keymap.
+
 ```
 bind-key b set-option status
 ```
+
 Now pressing `prefix+b` will toggle status bar
 
-## Contributing
+<details>
 
-If you believe this theme can benefit from additional features or improvements without compromising its minimalism, I welcome your contributions. Please create a pull request with your changes, and we'll be happy to review and merge if they align with the project's goals.
+<summary style="font-weigth: bold; font-size: 21px;"> Automatic tpm installation </summary>
 
-## Feedback
+One of the first things we do on a new machine is cloning our dotfiles. Not everything comes with them though, so for example `tpm` most likely won't be installed.
 
-I value your feedback and suggestions. If you have any ideas for improving this theme or encounter any issues, please don't hesitate to open an issue on GitHub.
+If you want to install `tpm` and plugins automatically when tmux is started, put the following snippet in `.tmux.conf` before the final `run '~/.tmux/plugins/tpm/tpm'`:
 
+```
+if "test ! -d ~/.tmux/plugins/tpm" \
+   "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
+```
 
-
-Thank you for considering the **Tmux Status Theme** for your Tmux setup. I hope it enhances your Tmux experience with its minimalist design and efficient use of screen real estate. Happy coding! 😊👍
-
+</details>
