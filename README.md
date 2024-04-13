@@ -86,7 +86,7 @@ set -g @minimal-tmux-status-left "refer to code"
 
 # If getting strings cut in left status or right
 # Here 20 is the length of the characters in the string
-set -g status-left-right 20
+set -g status-right-length 20
 set -g status-left-length 20
 ```
 
