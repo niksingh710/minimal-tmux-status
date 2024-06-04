@@ -9,9 +9,14 @@
     self,
     nixpkgs,
   }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    forAllSystems = function:
+      nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux" "x86_64-darwin"] (
+        system:
+          function nixpkgs.legacyPackages.${system}
+      );
   in {
-    packages.${system}.default = (import ./default.nix { inherit pkgs; });
+    packages = forAllSystems (pkgs: {
+      default = pkgs.callPackage ./default.nix {};
+    });
   };
 }
