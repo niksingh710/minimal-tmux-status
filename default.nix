@@ -1,4 +1,5 @@
 {pkgs ? import <nixpkgs> {}}:
+
 pkgs.tmuxPlugins.mkTmuxPlugin {
   pluginName = "minimal-tmux-status";
   version = "1.0";

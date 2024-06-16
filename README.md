@@ -90,7 +90,23 @@ set -g status-right-length 20
 set -g status-left-length 20
 ```
 
-### Installation via Tmux Plugin Manager (TPM)
+### Installation
+
+#### As flake in Nix os
+```nix
+# flake input
+minimal-tmux = {
+  url = "github:niksingh710/minimal-tmux-status";
+  inputs.nixpkgs.follows = "nixpkgs";
+};
+
+# tmux config
+programs.tmux.plugins = [
+  { plugin = inputs.minimal-tmux.packages.${pkgs.system}.default; }
+];
+```
+
+#### Via Tmux Plugin Manager (TPM)
 
 I recommend using [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tpm) for easy installation:
 
