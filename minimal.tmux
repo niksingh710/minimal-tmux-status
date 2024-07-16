@@ -13,6 +13,7 @@ get_tmux_option() {
 }
 
 bg=$(get_tmux_option "@minimal-tmux-bg" '#698DDA')
+fg=$(get_tmux_option "@minimal-tmux-fg" '#000000')
 
 status=$(get_tmux_option "@minimal-tmux-status" "bottom")
 justify=$(get_tmux_option "@minimal-tmux-justify" "centre")
@@ -50,7 +51,7 @@ tmux set-option -g status-justify "${justify}"
 tmux set-option -g status-left "${status_left_extra}"
 tmux set-option -g status-right "${status_right_extra}"
 tmux set-option -g window-status-format "${window_status_format}"
-tmux set-option -g window-status-current-format "#[bg=${bg},fg=#000000] ${window_status_format}#{?window_zoomed_flag,${expanded_icon}, }"
+tmux set-option -g window-status-current-format "#[bg=${bg},fg=${fg}] ${window_status_format}#{?window_zoomed_flag,${expanded_icon}, }"
 
 if [ "$show_expanded_icon_for_all_tabs" = true ]; then
 	tmux set-option -g window-status-format " ${window_status_format}#{?window_zoomed_flag,${expanded_icon}, }"
