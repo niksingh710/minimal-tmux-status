@@ -1,7 +1,5 @@
 <p align="center" style="color:grey">
 
-
-
 ![image](https://github.com/niksingh710/minimal-tmux-status/assets/60490474/f689e7c8-f081-421e-a7f4-3108f9a870eb)
 
 <div align="center">
@@ -37,11 +35,10 @@ This is inspired from the zellij prefix indicator, that shows when the prefix ke
 
 <video width="800" autoplay loop src="https://github.com/niksingh710/minimal-tmux-status/assets/60490474/5d5cece0-5edf-4035-bb2d-c46868c357d1"></video>
 
-
-| Un pressed Prefix |
-|-------------------------|
+| Un pressed Prefix                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------- |
 | ![image](https://github.com/niksingh710/minimal-tmux-status/assets/60490474/a7783229-cd8c-435d-8bf5-fa7ffa3f43ea) |
-| **Pressed Prefix** |
+| **Pressed Prefix**                                                                                                |
 | ![image](https://github.com/niksingh710/minimal-tmux-status/assets/60490474/831113d7-6ba5-43f6-908b-2158b99f0ffe) |
 
 </div>
@@ -59,6 +56,7 @@ This is inspired from the zellij prefix indicator, that shows when the prefix ke
 ```
 # These are the default values used inside the plugin to acheive the preview shown above.
 
+set -g @minimal-tmux-fg "#000000"
 set -g @minimal-tmux-bg "#698DDA"
 set -g @minimal-tmux-justify "centre"
 set -g @minimal-tmux-indicator-str "  tmux  "
@@ -93,6 +91,7 @@ set -g status-left-length 20
 ### Installation
 
 #### As flake in Nix os
+
 ```nix
 # flake input
 minimal-tmux = {
