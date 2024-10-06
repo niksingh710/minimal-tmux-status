@@ -11,7 +11,14 @@ get_tmux_option() {
 	fi
 	echo "$default_value"
 }
-
+use_arrow=$(get_tmux_option "@minimal-tmux-use-arrow" false)
+if "$use_arrow"; then
+	rarrow=$(get_tmux_option "@minimal-tmux-right-arrow" "")
+	larrow=$(get_tmux_option "@minimal-tmux-left-arrow" "")
+else
+	larrow=""
+	rarrow=""
+fi
 bg=$(get_tmux_option "@minimal-tmux-bg" '#698DDA')
 fg=$(get_tmux_option "@minimal-tmux-fg" '#000000')
 
@@ -51,8 +58,7 @@ tmux set-option -g status-justify "${justify}"
 tmux set-option -g status-left "${status_left_extra}"
 tmux set-option -g status-right "${status_right_extra}"
 tmux set-option -g window-status-format "${window_status_format}"
-tmux set-option -g window-status-current-format "#[bg=${bg},fg=${fg}] ${window_status_format}#{?window_zoomed_flag,${expanded_icon}, }"
-
+tmux set-option -g window-status-current-format "#[fg=${bg}]$larrow#[bg=${bg},fg=${fg}]${window_status_format}#[fg=${bg},bg=default]$rarrow#{?window_zoomed_flag,${expanded_icon}, }"
 if [ "$show_expanded_icon_for_all_tabs" = true ]; then
 	tmux set-option -g window-status-format " ${window_status_format}#{?window_zoomed_flag,${expanded_icon}, }"
 fi
