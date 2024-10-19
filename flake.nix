@@ -7,9 +7,25 @@
     let
       forAllSystems = function:
         nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ]
-        (system: function nixpkgs.legacyPackages.${system});
-    in {
+          (system: function nixpkgs.legacyPackages.${system});
+    in
+    {
       packages =
-        forAllSystems (pkgs: { default = pkgs.callPackage ./default.nix { }; });
+        forAllSystems (pkgs: {
+          default = pkgs.tmuxPlugins.mkTmuxPlugin {
+            pluginName = "minimal-tmux-status";
+            version = "1.0";
+            src = ./.;
+            rtpFilePath = "minimal.tmux";
+
+            meta = {
+              homepage = "https://github.com/niksingh710/minimal-tmux-status";
+              description = "Minimal Status Bar Tmux";
+              license = pkgs.lib.licenses.mit;
+              platforms = pkgs.lib.platforms.unix;
+              maintainers = with pkgs.lib.maintainers; [ niksingh710 ];
+            };
+          };
+        });
     };
 }
