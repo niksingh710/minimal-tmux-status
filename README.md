@@ -53,8 +53,25 @@ This is inspired from the zellij prefix indicator, that shows when the prefix ke
 
 ### Variables to Configure
 
+##### My Personal Configuration
+
+![image](https://github.com/user-attachments/assets/e58cafed-295f-49d4-af15-86f67d580a76)
+
+<details>
+    <summary>Config</summary>
+
+```tmux
+# set -g @minimal-tmux-bg "#${config.stylix.base16Scheme.base01}" (or you can use it with pywal)
+set -g @minimal-tmux-use-arrow true
+set -g @minimal-tmux-right-arrow ""
+set -g @minimal-tmux-left-arrow ""
 ```
-# These are the default values used inside the plugin to acheive the preview shown above.
+</details>
+
+<br>
+
+```
+# These are the default values used inside the plugin to achieve the preview shown above.
 
 set -g @minimal-tmux-fg "#000000"
 set -g @minimal-tmux-bg "#698DDA"
@@ -145,7 +162,7 @@ Now pressing `prefix+b` will toggle status bar
 
 <details>
 
-<summary style="font-weigth: bold; font-size: 21px;"> Automatic tpm installation </summary>
+<summary style="font-weight: bold; font-size: 21px;"> Automatic tpm installation </summary>
 
 One of the first things we do on a new machine is cloning our dotfiles. Not everything comes with them though, so for example `tpm` most likely won't be installed.
 
