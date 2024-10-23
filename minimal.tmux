@@ -24,6 +24,7 @@ get_tmux_option() {
 # - @minimal-tmux-status: position of the status line (top or bottom)
 # - @minimal-tmux-justify: justification of the status line (left, centre or right)
 # - @minimal-tmux-indicator: whether to show the indicator of the prefix
+# - @minimal-tmux-indicator-str: string of the indicator
 # - @minimal-tmux-right: whether to show the right side of the status line
 # - @minimal-tmux-left: whether to show the left side of the status line
 # - @minimal-tmux-status-right: content of the right side of the status line
@@ -51,7 +52,8 @@ status=$(get_tmux_option "@minimal-tmux-status" "bottom")
 justify=$(get_tmux_option "@minimal-tmux-justify" "centre")
 
 indicator_state=$(get_tmux_option "@minimal-tmux-indicator" true)
-indicator=$("$indicator_state" && echo "  tmux  ")
+indicator_str=$(get_tmux_option "@minimal-tmux-indicator-str" " tmux ")
+indicator=$("$indicator_state" && echo " $indicator_str ")
 
 right_state=$(get_tmux_option "@minimal-tmux-right" true)
 left_state=$(get_tmux_option "@minimal-tmux-left" true)
