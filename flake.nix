@@ -15,7 +15,7 @@
           default = pkgs.tmuxPlugins.mkTmuxPlugin {
             pluginName = "minimal-tmux-status";
             version = "1.0";
-            src = ./.;
+            src = builtins.path { path = ./.; name = "source"; };
             rtpFilePath = "minimal.tmux";
 
             meta = {
