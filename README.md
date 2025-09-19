@@ -116,15 +116,16 @@ set -g status-left-length 20
 #### As flake in Nix os
 
 ```nix
-# flake input
-minimal-tmux = {
-  url = "github:niksingh710/minimal-tmux-status";
-  inputs.nixpkgs.follows = "nixpkgs";
-};
-
 # tmux config
 programs.tmux.plugins = [
-  { plugin = inputs.minimal-tmux.packages.${pkgs.system}.default; }
+  {
+    plugin = pkgs.tmuxPlugins.minimal-tmux-status; # as now available in nixpkgs
+    extraConfig = ''
+      set -g @minimal-tmux-use-arrow true
+      set -g @minimal-tmux-right-arrow ""
+      set -g @minimal-tmux-left-arrow ""
+    '';
+  }
 ];
 ```
 
